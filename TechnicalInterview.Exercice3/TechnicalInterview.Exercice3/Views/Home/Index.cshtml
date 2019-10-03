@@ -1,0 +1,33 @@
+﻿@model  TechnicalInterview.Exercice3.ViewModels.ProductListViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>Our products</h1>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Product name</th>
+                        <th scope="col">Product description</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var product in Model.Products)
+                    {
+                        <tr>
+                            <th scope="row"> #@product.Id</th>
+                            <td>@product.Name</td>
+                            <td>@product.Description</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
