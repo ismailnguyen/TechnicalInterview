@@ -1,36 +1,68 @@
 ﻿@model TechnicalInterview.Exercice3.ViewModels.AddProductViewModel
 @{
-    /**/
-
     ViewBag.Title = "Add a new product";
 }
-<h2>@ViewBag.Title</h2>
 
-@if (!string.IsNullOrEmpty(ViewBag.Message))
-{
-<div class="alert alert-success" role="alert">
-    @ViewBag.Message
-</div>
-}
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    @ViewBag.Title
+                </h1>
+            </div>
+        </div>
+    </section>
 
-@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
-{
-    <div class="alert alert-danger" role="alert">
-        @ViewBag.ErrorMessage
-    </div>
-}
+    <section class="section">
+        <div class="container">
+            @if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <h2 class="subtitle is-success">
+                    @ViewBag.Message
+                </h2>
+            }
 
-@using (Html.BeginForm())
-{
-    <div class="form-group">
-        @Html.LabelFor(model => model.ProductName, "Product name")
-        @Html.TextBoxFor(model => model.ProductName, new { @class = "form-control" })
-    </div>
+            @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+            {
+                <h2 class="subtitle is-danger">
+                    @ViewBag.ErrorMessage
+                </h2>
+            }
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ProductDescription, "Product description")
-        @Html.TextAreaFor(model => model.ProductDescription, new { @class = "form-control" })
-    </div>
+            @using (Html.BeginForm())
+            {
+                <div class="field">
+                    @Html.LabelFor(model => model.ProductName, "Product name", new { @class = "label" })
+                    <div class="control">
+                        @Html.TextBoxFor(model => model.ProductName, new { @class = "input", placeholder = "Name" })
+                    </div>
+                </div>
 
-    <input type="submit" value="Submit" class="btn btn-default" />
-}
+                <div class="field">
+                    @Html.LabelFor(model => model.ProductDescription, "Product description", new { @class = "label" })
+                    <div class="control">
+                        @Html.TextAreaFor(model => model.ProductDescription, new { @class = "textarea" })
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            I agree to the @Html.ActionLink("terms and conditions", "TermsAndConditions", "Home")
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field is-grouped">
+                    <div class="control">
+                        <input type="submit" value="Submit" class="button is-link" />
+                    </div>
+                    <div class="control">
+                        <button class="button is-link is-light">Cancel</button>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </section>

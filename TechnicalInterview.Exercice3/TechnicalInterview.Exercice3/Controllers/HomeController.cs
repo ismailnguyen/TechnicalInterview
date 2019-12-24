@@ -40,7 +40,7 @@ namespace TechnicalInterview.Exercice3.Controllers
 
                 ViewBag.Message = "Product was correctly added !";
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 ViewBag.ErrorMessage = exception.Message;
             }
@@ -49,6 +49,11 @@ namespace TechnicalInterview.Exercice3.Controllers
         }
 
         public ActionResult Add()
+        {
+            return View();
+        }
+
+        public ActionResult TermsAndConditions()
         {
             return View();
         }

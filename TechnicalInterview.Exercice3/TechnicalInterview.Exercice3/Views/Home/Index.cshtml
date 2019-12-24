@@ -3,31 +3,48 @@
     ViewBag.Title = "Home Page";
 }
 
-<h1>Our products</h1>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Welcome to an amazing shopping experience
+                </h1>
+                <h2 class="subtitle">
+                    Look at our promotions !
+                </h2>
+            </div>
+        </div>
+    </section>
 
-<div class="jumbotron">
-    <div class="row">
-        <div class="col-sm-12">
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Our products
+            </h1>
+
+            <p class="subtitle">
+                Sales : Free shipping for basket above 5€ !
+            </p>
+
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Product name</th>
-                        <th scope="col">Product description</th>
+                        <th>#</th>
+                        <th>Product name</th>
+                        <th>Product description</th>
                     </tr>
                 </thead>
                 <tbody>
-
                     @foreach (var product in Model.Products)
                     {
                         <tr>
-                            <th scope="row"> #@product.Id</th>
+                            <th>#@product.Id</th>
                             <td>@product.Name</td>
                             <td>@product.Description</td>
                         </tr>
                     }
                 </tbody>
             </table>
+
         </div>
-    </div>
-</div>
+    </section>

@@ -7,7 +7,7 @@ namespace TechnicalInterview.Exercice3.DataLayer
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly List<Product> products;
+        private  List<Product> products;
 
         public ProductRepository()
         {
