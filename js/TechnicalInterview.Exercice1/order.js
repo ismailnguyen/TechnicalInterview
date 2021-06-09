@@ -1,6 +1,6 @@
 class Order {
     id;
-    article;
+    articles;
     isValid;
 
     prepare () {
