@@ -8,8 +8,6 @@ class Order {
             if (this.articles[i].toUpperCase() == "CHOUCROUTE") {
                this.articles = null;
                this.isValid = false;
-
-               break;
             }
         }
         
