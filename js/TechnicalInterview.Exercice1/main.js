@@ -4,7 +4,7 @@ var Logger = require('logger').Logger;
 
 function init () {
     var o = new Order();
-    o.iD = 42;
+    o.id = 42;
     o.articles = [];
     o.articles.push("Choucroute");
     o.articles.push("Artichaud");
